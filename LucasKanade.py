@@ -38,8 +38,8 @@ class Algorithm:
                 match = abs(point0-point0_reverse).reshape(-1, 2).max(-1)
                 control = match < 1
                 cpoints = []
-                for track, (x, y), control_flag in zip(self.points, point1.reshape(-1, 2), control):
-                    if not control_flag:
+                for track, (x, y), red_flag in zip(self.points, point1.reshape(-1, 2), control):
+                    if not red_flag:
                         continue
                     track.append((x, y))
                     if len(track) > self.track_len:
